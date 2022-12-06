@@ -1,0 +1,180 @@
+User Data:
+
+authorize and get user data
+put https://zyae.net/music/api/userData
+returns user data
+
+{
+    "username": "username",
+    "password": "password"
+}
+
+get specific id user data
+get https://zyae.net/music/api/userData/{userid}
+returns user data
+
+create new user
+post https://zyae.net/music/api/userData/
+{
+    "username": "username",
+    "password": "password"
+}
+returns new user data
+
+update user
+patch https://zyae.net/music/api/userData/{userid}
+{
+    "username": "new_name",
+    "update_key": "update_value"
+}
+returns updated user data
+
+delete user
+delete https://zyae.net/music/api/userData/{userid}
+returns deleted user data
+
+
+
+Liked Songs:
+
+get user liked songs
+get https://zyae.net/music/api/userData/{userid}/likedSongs
+returns user liked songs
+
+add new liked song
+post https://zyae.net/music/api/userData/{userid}/likedSongs
+{
+    "song_id": "fr80LhkZR80"
+}
+returns array of liked songs
+
+delete liked song
+delete https://zyae.net/music/api/userData/{userid}/likedSongs/{songid}
+returns array of liked songs
+
+Playlist Data:
+
+get user playlist data
+get https://zyae.net/music/api/userData/{userid}/playlistData
+returns user playlist data
+
+get one user playlist
+get https://zyae.net/music/api/userData/{userid}/playlistData/{playlistid}
+returns one user playlist
+
+create new playlist
+post https://zyae.net/music/api/userData/{userid}/playlistData
+{
+    "playlist_name": "my playlist"
+}
+(if no playlist name is given "Playlist #n" is automatically assigned)
+returns new playlist data
+
+update playlist
+patch https://zyae.net/music/api/userData/{userid}/playlistData/{playlistid}
+{
+    "playlist_name": "new_name",
+    "update_key": "update_value"
+}
+returns updated playlist data
+
+delete playlist
+delete https://zyae.net/music/api/userData/{userid}/playlistData/{playlistid}
+returns deleted playlist data
+
+
+
+Library Items:
+
+
+Recently Searched:
+
+get user recently searched data
+get https://zyae.net/music/api/userData/{userid}/recentlySearched
+returns user recently searched data
+
+get one user recently searched
+get https://zyae.net/music/api/userData/{userid}/recentlySearched/{itemid}
+returns one user recently searched item
+
+create new recently searched item
+post https://zyae.net/music/api/userData/{userid}/recentlySearched
+{
+    "item_type": "playlist",
+    "youtube_id": "VLPLV6d6oiuADRZy0YLO_FpbIsc7GLRQWb-J",
+    "item_title": "The 500 Greatest Hip-Hop Songs of All Time",
+    "thumbnail": "https://zyae.net/url/photo.jpg",
+    "item_subInfo": "500 songs"
+}
+returns new recently searched item
+
+delete all recently searched
+delete https://zyae.net/music/api/userData/{userid}/recentlySearched
+returns all deleted items
+
+
+
+Recently Played:
+
+get user recently played
+get https://zyae.net/music/api/userData/{userid}/recentlyPlayed
+returns user recently played data
+
+get one user recently played
+get https://zyae.net/music//api/userData/{userid}/recentlySearched/{itemid}
+returns one user recently played item
+
+create new recently played item
+post https://zyae.net/music/api/db/userData/{userid}/recentlySearched
+{
+    "item_type": "album",
+    "youtube_id": "MPREb_og8knTKj05Z",
+    "item_title": "EA Monster",
+    "thumbnail": "https://lh3.googleusercontent.com/C8N3on7CbRYulGRfpbbwn_Id0ivtbQ5yfEqRS-aj5iFwiH1UC2vrvWTo8PDb00gJwnlXEBT6y-imeAl6=w544-h544-l90-rj",
+    "item_subInfo": "By Young Nudy"
+}
+return new recently played item
+
+delete all recently played
+delete https://zyae.net/music/api/db/userData/{userid}/recentlySearched
+returns all deleted items
+
+
+
+Music Data:
+
+get all music data
+get https://zyae.net/music/api/musicData/
+
+get one music data
+get https://zyae.net/music/api/musicData/{song_id}
+
+create new music data
+post https://zyae.net/music/api/musicData/
+{
+    "song_id": "T89uo6MmkQM",
+    "title": "Move to the Beat",
+    "artists": [
+      {
+        "name": "Djjoker106",
+        "id": "UCoRykJnBM8mCbCqbzMJZA5Q",
+      }
+    ],
+    "album": "Move to the Beat",
+    "thumbnail": "https://lh3.googleusercontent.com/UI98s6sQtLL1CiXQyQcXlR-246G29xFipDFTegR_j5k_dljp43XAzx5YIdMg096a7TyYvd_H8KVmpVa7=w120-h120-l90-rj",
+    "duration": "2:08",
+    "isExplicit": false,
+}
+
+delete new music data
+delete https://zyae.net/music/api/musicData/{song_id}
+
+
+mp3 Data:
+
+get music
+get https://zyae.net/music/tracks/{song_id}
+
+load music
+post https://zyae.net/music/tracks/{songid}
+returns song data and loads song into tracks directory

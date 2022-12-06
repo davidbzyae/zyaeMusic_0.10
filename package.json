@@ -1,0 +1,35 @@
+{
+  "name": "zyae_music_0-10",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./app.js",
+    "drop": "node ./drop_db.js",
+    "start": "node ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.1.0",
+    "classnames": "^2.3.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "lockr": "^0.9.0-beta.0",
+    "mongoose": "^6.5.4",
+    "mongoose-immutable-plugin": "^1.0.3",
+    "node-youtube-music": "^0.7.0",
+    "python-shell": "^3.0.1",
+    "react-router-dom": "^6.4.2",
+    "sass": "^1.56.1",
+    "ytdl-core": "^4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "keywords": [],
+  "description": ""
+}
